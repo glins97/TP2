@@ -1,22 +1,22 @@
 CFLAGS = -O
 CC = g++
 
-out: main.o alphabetizer.o shift.o output.o input.o
+out: main
 	$(CC) $(CFLAGS) -o out main.o alphabetizer.o shift.o output.o input.o
 
-main.o: main.cpp
+main: input
 	$(CC) $(CFLAGS) -c main.cpp
 
-alphabetizer.o: alphabetizer.cpp
+alphabetizer: alphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer.cpp
 
-shift.o: shift.cpp
+shift: shift.cpp
 	$(CC) $(CFLAGS) -c shift.cpp
 
-output.o: output.cpp
+output: output.cpp
 	$(CC) $(CFLAGS) -c output.cpp
 
-input.o: input.cpp
+input:
 	$(CC) $(CFLAGS) -c input.cpp
 
 clean:
