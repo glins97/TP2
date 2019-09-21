@@ -3,6 +3,7 @@ CC = g++
 
 out: main
 	$(CC) $(CFLAGS) -o out main.o alphabetizer.o shift.o output.o input.o
+	./out
 
 main: input
 	$(CC) $(CFLAGS) -c main.cpp
