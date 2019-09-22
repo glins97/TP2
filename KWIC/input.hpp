@@ -7,4 +7,3 @@ using namespace std;
 #include <fstream>
 
 list<string> loadFile(char* filename);
-void printList(list<string> l);

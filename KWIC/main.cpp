@@ -1,4 +1,5 @@
 #include "input.hpp"
+#include "output.hpp"
 using namespace std;
 
 int main(){
