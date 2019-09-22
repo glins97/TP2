@@ -6,4 +6,8 @@ using namespace std;
 #include <list>
 #include <fstream>
 
-list<string> loadFile(char* filename);
+list<string> _splitTitle(string title);
+list<list<string>> _splitContent(list<string> content);
+
+list<string> _loadFile(char* filename);
+list<list<string>> loadTitlesFromFilename(char* filename);
