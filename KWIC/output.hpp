@@ -6,3 +6,4 @@ using namespace std;
 #include <list>
 
 void printList(list<string> l);
+void printTitles(list<list<string>> titles);

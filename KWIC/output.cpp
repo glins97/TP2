@@ -7,3 +7,11 @@ void printList(list<string> l){
     }
     cout << endl;
 }
+
+void printTitles(list<list<string>> titles){
+    for (auto title: titles){
+        cout << '\t';
+        printList(title);
+    }
+    cout << endl;
+}

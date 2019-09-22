@@ -3,9 +3,9 @@
 using namespace std;
 
 int main(){
-    char filename[] = "files/1";
+    char filename[] = "files/2";
 
-    list<string> content = loadFile(filename);
-    printList(content);
+    auto titles = loadTitlesFromFilename(filename);
+    printTitles(titles);
     return 0;
 }
