@@ -29,7 +29,7 @@ list<string> _splitTitle(string title){
             word += c;
         }
     }
-    res.push_back(word);
+    if (word != "") res.push_back(word);
     return res;
 }
 
