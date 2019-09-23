@@ -20,9 +20,7 @@ list<string> compareTitles(list<string> a, list<string> b){
         if (bWord < aWord)
             return b;
         else if (aWord < bWord)
-        {
             return a;
-        }
         
     }
 
