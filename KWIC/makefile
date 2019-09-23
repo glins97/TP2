@@ -5,7 +5,7 @@ out: main
 	$(CC) $(CFLAGS) -o out main.o alphabetizer.o shift.o output.o input.o
 	./out
 
-main: alphabetizer input output main.cpp
+main: shift alphabetizer input output main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
 alphabetizer: alphabetizer.cpp
