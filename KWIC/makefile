@@ -1,12 +1,15 @@
-CFLAGS = -O
+CFLAGS = -std=c++17 -O
 CC = g++
 
 out: main
-	$(CC) $(CFLAGS) -o out main.o alphabetizer.o shift.o output.o input.o
+	$(CC) $(CFLAGS) -o out main.o alphabetizer.o kwic.o shift.o output.o input.o
 	./out
 
-main: shift alphabetizer input output main.cpp
+main: kwic main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
+
+kwic: kwic.cpp shift alphabetizer input output 
+	$(CC) $(CFLAGS) -c kwic.cpp
 
 alphabetizer: alphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer.cpp
