@@ -5,7 +5,10 @@ using namespace std;
 
 class StopWordsShifterManager: public ShifterManager{
     public:
+    list<string> sw;
     list<list<string>> shift(list<list<string>> titles);
     list<list<string>> shiftTitle(list<string> title);
-
+    StopWordsShifterManager(list<string> sw);
+    template <class T>
+    bool in(T obj, list<T> collection);
 };

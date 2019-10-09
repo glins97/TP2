@@ -62,7 +62,13 @@ int main(){
     choice = requestMenuChoice(list<string>({"Com SW", "Sem SW"}));
     switch (choice){
         case 1:
-            kwic.shifterManager = new StopWordsShifterManager(); 
+            kwic.shifterManager = new StopWordsShifterManager(
+                list<string>({
+                    "o", "a", "os", "as", 
+                    "um", "uma", "uns", "umas", 
+                    "de", "da", "do", "dos", "das", 
+                    " ", ""
+                })); 
             break;
         case 2:
             kwic.shifterManager = new NoStopWordsShifterManager(); 
