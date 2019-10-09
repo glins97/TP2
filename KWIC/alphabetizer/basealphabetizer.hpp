@@ -12,5 +12,5 @@ class AlphabetizerManager{
     list<string> compareTitles(list<string> a, list<string> b);
 };
 
-#include "nswalphabetizer.hpp"
-#include "swalphabetizer.hpp"
+#include "crappyalphabetizer.hpp"
+#include "quickalphabetizer.hpp"

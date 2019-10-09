@@ -3,7 +3,7 @@ using namespace std;
 
 #include "basealphabetizer.hpp"
 
-class SWAlphabetizerManager: public AlphabetizerManager{
+class CrappyAlphabetizerManager: public AlphabetizerManager{
     public:
     list<list<string>> sort(list<list<string>> titles);
 };

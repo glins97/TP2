@@ -4,19 +4,13 @@ CC = g++
 # -----------------------------------------
 # 					MAIN
 # -----------------------------------------
-out: main.o
+out: main.o kwic.o inputs.o outputs.o alphabetizers.o shifts.o
 	$(CC) $(CFLAGS) -o out *.o
 	./out
 
-aux: main.o kwic.o inputs.o outputs.o alphabetizers.o shifts.o
-
-main.o: kwic.o main.cpp
+main.o: kwic/kwic.cpp main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
-
-kwic.o: kwic/kwic.cpp 
-	$(CC) $(CFLAGS) -c kwic/kwic.cpp
 # -----------------------------------------
-
 
 
 # -----------------------------------------
@@ -48,13 +42,13 @@ baseoutput.o: output/baseoutput.cpp
 # -----------------------------------------
 # 				ALPHABETIZER
 # -----------------------------------------
-alphabetizers.o: basealphabetizer.o nswalphabetizer.o swalphabetizer.o
+alphabetizers.o: basealphabetizer.o crappyalphabetizer.o quickalphabetizer.o
 
-nswalphabetizer.o: basealphabetizer.o alphabetizer/nswalphabetizer.cpp
-	$(CC) $(CFLAGS) -c alphabetizer/nswalphabetizer.cpp
+crappyalphabetizer.o: basealphabetizer.o alphabetizer/crappyalphabetizer.cpp
+	$(CC) $(CFLAGS) -c alphabetizer/crappyalphabetizer.cpp
 
-swalphabetizer.o: basealphabetizer.o alphabetizer/swalphabetizer.cpp
-	$(CC) $(CFLAGS) -c alphabetizer/swalphabetizer.cpp
+quickalphabetizer.o: basealphabetizer.o alphabetizer/quickalphabetizer.cpp
+	$(CC) $(CFLAGS) -c alphabetizer/quickalphabetizer.cpp
 
 basealphabetizer.o: alphabetizer/basealphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer/basealphabetizer.cpp

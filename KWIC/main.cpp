@@ -33,8 +33,7 @@ int main(){
     char filename[] = "resources/2";
     auto kwic = KWIC();
 
-    clearConsole();
-    cout << "Qual a forma de INPUT desejada?" << endl;
+    cout << "\nQual a forma de INPUT desejada?" << endl;
     int choice = requestMenuChoice(list<string>({"Texto", "CSV", "XML", "SQL", "DBLP"}));
     switch (choice){
         case 1:
@@ -59,9 +58,39 @@ int main(){
             break;
     };
 
+    cout << "\nQual a forma de SHIFTING desejada?" << endl;
+    choice = requestMenuChoice(list<string>({"Com SW", "Sem SW"}));
+    switch (choice){
+        case 1:
+            kwic.shifterManager = new StopWordsShifterManager(); 
+            break;
+        case 2:
+            kwic.shifterManager = new NoStopWordsShifterManager(); 
+            break;
+        default:
+            cout << "Not yet implemented. Enter [0] to continue." << endl;
+            cin >> i;
+            kwic.shifterManager = new ShifterManager(); 
+            break;
+    };
 
-    clearConsole();
-    cout << "Qual a forma de OUTPUT desejada?" << endl;
+    cout << "\nQual a forma de SORTING desejada?" << endl;
+    choice = requestMenuChoice(list<string>({"Quick", "Crappy"}));
+    switch (choice){
+        case 1:
+            kwic.alphabetizerManager = new QuickAlphabetizer(); 
+            break;
+        case 2:
+            kwic.alphabetizerManager = new CrappyAlphabetizerManager(); 
+            break;
+        default:
+            cout << "Not yet implemented. Enter [0] to continue." << endl;
+            cin >> i;
+            kwic.alphabetizerManager = new AlphabetizerManager(); 
+            break;
+    };
+
+    cout << "\nQual a forma de OUTPUT desejada?" << endl;
     choice = requestMenuChoice(list<string>({"Print", "Texto", "CSV", "XML", "HTML"}));
     switch (choice){
         case 1:
@@ -86,43 +115,7 @@ int main(){
             break;
     };
 
-
-    clearConsole();
-    cout << "Qual a forma de SHIFTING desejada?" << endl;
-    choice = requestMenuChoice(list<string>({"Com SW", "Sem SW"}));
-    switch (choice){
-        case 1:
-            kwic.shifterManager = new StopWordsShifterManager(); 
-            break;
-        case 2:
-            kwic.shifterManager = new NoStopWordsShifterManager(); 
-            break;
-        default:
-            cout << "Not yet implemented. Enter [0] to continue." << endl;
-            cin >> i;
-            kwic.shifterManager = new ShifterManager(); 
-            break;
-    };
-
-
-    clearConsole();
-    cout << "Qual a forma de SORTING desejada?" << endl;
-    choice = requestMenuChoice(list<string>({"Com SW", "Sem SW"}));
-    switch (choice){
-        case 1:
-            kwic.alphabetizerManager = new SWAlphabetizerManager(); 
-            break;
-        case 2:
-            kwic.alphabetizerManager = new NSWAlphabetizerManager(); 
-            break;
-        default:
-            cout << "Not yet implemented. Enter [0] to continue." << endl;
-            cin >> i;
-            kwic.alphabetizerManager = new AlphabetizerManager(); 
-            break;
-    };
-
-    clearConsole();
+    cout << endl;
     kwic.run();
     cout << "Execução finalizada." << endl;
     return 0;
