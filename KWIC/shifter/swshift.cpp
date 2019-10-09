@@ -16,10 +16,10 @@ list<list<string>> StopWordsShifterManager::shiftTitle(list<string> title){
     auto newTitle = list<string>(title);
     for (int i = 0; i < newTitle.size(); i++){
         auto back = newTitle.back();
-        if (this->in(back, this->sw)) 
-            continue;
         newTitle.pop_back();
         newTitle.push_front(back);
+        if (this->in(back, this->sw)) 
+            continue;
         res.push_front(newTitle);
     }
     return res;

@@ -64,8 +64,9 @@ int main(){
         case 1:
             kwic.shifterManager = new StopWordsShifterManager(
                 list<string>({
-                    "o", "a", "os", "as", 
+                    "o", "a", "os", "as", "à", "ao", 
                     "um", "uma", "uns", "umas", 
+                    "em", "no", "na", "nos", "nas",
                     "de", "da", "do", "dos", "das", 
                     " ", ""
                 })); 
