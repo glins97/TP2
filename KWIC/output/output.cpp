@@ -1,6 +1,5 @@
 #include "output.hpp"
 
-
 void PrintOutputManager::dump(list<list<string>> titles){
     printTitles(titles);
 }

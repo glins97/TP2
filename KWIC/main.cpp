@@ -1,8 +1,8 @@
-#include "input.hpp"
-#include "output.hpp"
-#include "alphabetizer.hpp"
-#include "shift.hpp"
-#include "kwic.hpp"
+#include "input/input.hpp"
+#include "output/output.hpp"
+#include "alphabetizer/alphabetizer.hpp"
+#include "shifter/shift.hpp"
+#include "kwic/kwic.hpp"
 using namespace std;
 
 void setKWIC(KWIC* variable){

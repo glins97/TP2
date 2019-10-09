@@ -8,20 +8,20 @@ out: main
 main: kwic main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
-kwic: kwic.cpp shift alphabetizer input output 
-	$(CC) $(CFLAGS) -c kwic.cpp
+kwic: kwic/kwic.cpp shift alphabetizer input output 
+	$(CC) $(CFLAGS) -c kwic/kwic.cpp
 
-alphabetizer: alphabetizer.cpp
-	$(CC) $(CFLAGS) -c alphabetizer.cpp
+alphabetizer: alphabetizer/alphabetizer.cpp
+	$(CC) $(CFLAGS) -c alphabetizer/alphabetizer.cpp
 
-shift: shift.cpp
-	$(CC) $(CFLAGS) -c shift.cpp
+shift: shifter/shift.cpp
+	$(CC) $(CFLAGS) -c shifter/shift.cpp
 
-output: output.cpp
-	$(CC) $(CFLAGS) -c output.cpp
+output: output/output.cpp
+	$(CC) $(CFLAGS) -c output/output.cpp
 
-input: input.cpp
-	$(CC) $(CFLAGS) -c input.cpp
+input: input/input.cpp
+	$(CC) $(CFLAGS) -c input/input.cpp
 
 clean:
 	rm -f out *.o 
