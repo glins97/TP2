@@ -89,13 +89,13 @@ int main(){
 
     clearConsole();
     cout << "Qual a forma de SHIFTING desejada?" << endl;
-    choice = requestMenuChoice(list<string>({"Left", "Right"}));
+    choice = requestMenuChoice(list<string>({"Com SW", "Sem SW"}));
     switch (choice){
         case 1:
-            kwic.shifterManager = new LeftShifterManager(); 
+            kwic.shifterManager = new StopWordsShifterManager(); 
             break;
         case 2:
-            kwic.shifterManager = new RightShifterManager(); 
+            kwic.shifterManager = new NoStopWordsShifterManager(); 
             break;
         default:
             cout << "Not yet implemented. Enter [0] to continue." << endl;

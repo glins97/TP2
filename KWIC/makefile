@@ -8,6 +8,8 @@ out: main.o
 	$(CC) $(CFLAGS) -o out *.o
 	./out
 
+aux: main.o kwic.o inputs.o outputs.o alphabetizers.o shifts.o
+
 main.o: kwic.o main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
@@ -63,13 +65,13 @@ basealphabetizer.o: alphabetizer/basealphabetizer.cpp
 # -----------------------------------------
 # 					SHIFTS
 # -----------------------------------------
-shifts.o: baseshift.o rightshift.o leftshift.o
+shifts.o: baseshift.o nswshift.o swshift.o
 
-rightshift.o: baseshift.o shifter/rightshift.cpp
-	$(CC) $(CFLAGS) -c shifter/rightshift.cpp
+nswshift.o: baseshift.o shifter/nswshift.cpp
+	$(CC) $(CFLAGS) -c shifter/nswshift.cpp
 
-leftshift.o: baseshift.o shifter/leftshift.cpp
-	$(CC) $(CFLAGS) -c shifter/leftshift.cpp
+swshift.o: baseshift.o shifter/swshift.cpp
+	$(CC) $(CFLAGS) -c shifter/swshift.cpp
 
 baseshift.o: shifter/baseshift.cpp
 	$(CC) $(CFLAGS) -c shifter/baseshift.cpp
