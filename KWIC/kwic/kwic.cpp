@@ -1,7 +1,7 @@
 #include "kwic.hpp"
 
 KWIC::KWIC(){};
-KWIC::KWIC(InputManager* inputManager, OutputManager* outputManager,
+KWIC::KWIC(BaseInputManager* inputManager, BaseOutputManager* outputManager,
         AlphabetizerManager* alphabetizerManager, ShifterManager* shifterManager){
     this->inputManager = inputManager;
     this->outputManager = outputManager;

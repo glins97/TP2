@@ -1,6 +1,7 @@
 #include "printoutput.hpp"
 
 void PrintOutputManager::dump(list<list<string>> titles){
+    cout << "PrintOutputManager dump" << endl;    
     printTitles(titles);
 }
 

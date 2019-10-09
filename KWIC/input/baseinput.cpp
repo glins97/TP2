@@ -1,6 +1,6 @@
 #include "baseinput.hpp"
 
-list<string> InputManager::_loadFile(char* filename){
+list<string> BaseInputManager::_loadFile(char* filename){
     list<string> content = list<string>();
 
     FILE* fp = fopen(filename, "r");
@@ -17,7 +17,7 @@ list<string> InputManager::_loadFile(char* filename){
     return content;
 }
 
-list<string> InputManager::_splitTitle(string title){
+list<string> BaseInputManager::_splitTitle(string title){
     auto res = list<string>();
     string word = "";
     for (char c: title){
@@ -33,7 +33,7 @@ list<string> InputManager::_splitTitle(string title){
     return res;
 }
 
-list<list<string>> InputManager::_splitContent(list<string> content){
+list<list<string>> BaseInputManager::_splitContent(list<string> content){
     auto res = list<list<string>>();
     for (string title: content){
         auto splitted = _splitTitle(title); 

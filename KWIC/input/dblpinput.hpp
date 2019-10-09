@@ -3,9 +3,7 @@ using namespace std;
 
 #include "baseinput.hpp"
 
-class TextInputManager: public BaseInputManager{
+class DBLPInputManager: public BaseInputManager{
     public:
-    char* filename;
     list<list<string>> load();
-    TextInputManager(char* filename);
 };

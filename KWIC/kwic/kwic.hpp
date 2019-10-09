@@ -13,13 +13,13 @@ class KWIC{
     public:
     list<list<string>> data;
 
-    InputManager* inputManager;
-    OutputManager* outputManager;
+    BaseInputManager* inputManager;
+    BaseOutputManager* outputManager;
     AlphabetizerManager* alphabetizerManager;
     ShifterManager* shifterManager;
 
     void run();
     KWIC();
-    KWIC(InputManager* inputManager, OutputManager* outputManager,
+    KWIC(BaseInputManager* inputManager, BaseOutputManager* outputManager,
         AlphabetizerManager* alphabetizerManager, ShifterManager* shifterManager);
 };

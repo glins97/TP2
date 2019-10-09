@@ -4,10 +4,12 @@ using namespace std;
 #include <string>
 #include <list>
 #include <fstream>
+#include <iostream>
 
-class InputManager{
+class BaseInputManager{
     public:
     virtual list<list<string>> load(){
+        cout << "BaseInputManager load" << endl;
         return list<list<string>>();};
     
     list<string> _splitTitle(string title);
@@ -17,3 +19,6 @@ class InputManager{
 
 #include "textinput.hpp"
 #include "csvinput.hpp"
+#include "xmlinput.hpp"
+#include "sqlinput.hpp"
+#include "dblpinput.hpp"

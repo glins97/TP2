@@ -5,6 +5,7 @@ CSVInputManager::CSVInputManager(char* filename){
 };
 
 list<list<string>> CSVInputManager::load(){
+    cout << "CSVInputManager load" << endl;
     list<string> content = _loadFile(filename);
     return this->_splitContent(content);
 }

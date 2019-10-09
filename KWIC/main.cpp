@@ -43,10 +43,19 @@ int main(){
         case 2: 
             kwic.inputManager = new CSVInputManager(filename);
             break;
+        case 3: 
+            kwic.inputManager = new XMLInputManager(filename);
+            break;
+        case 4: 
+            kwic.inputManager = new SQLInputManager();
+            break;
+        case 5: 
+            kwic.inputManager = new DBLPInputManager();
+            break;
         default:
             cout << "Not yet implemented. Enter [0] to continue." << endl;
             cin >> i;
-            kwic.inputManager = new InputManager();
+            kwic.inputManager = new BaseInputManager();
             break;
     };
 
@@ -58,10 +67,22 @@ int main(){
         case 1:
             kwic.outputManager = new PrintOutputManager(); 
             break;
+        case 2:
+            kwic.outputManager = new TextOutputManager(); 
+            break;
+        case 3:
+            kwic.outputManager = new CSVOutputManager(); 
+            break;
+        case 4:
+            kwic.outputManager = new XMLOutputManager(); 
+            break;
+        case 5:
+            kwic.outputManager = new HTMLOutputManager(); 
+            break;
         default:
             cout << "Not yet implemented. Enter [0] to continue." << endl;
             cin >> i;
-            kwic.outputManager = new OutputManager(); 
+            kwic.outputManager = new BaseOutputManager(); 
             break;
     };
 

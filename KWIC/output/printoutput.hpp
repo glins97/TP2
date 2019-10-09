@@ -3,7 +3,7 @@ using namespace std;
 
 #include "baseoutput.hpp"
 
-class PrintOutputManager: public OutputManager{
+class PrintOutputManager: public BaseOutputManager{
     public:
     void dump(list<list<string>> titles);
     void printList(list<string> l);

@@ -11,7 +11,7 @@ out: main.o
 main.o: kwic.o main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
-kwic.o: kwic/kwic.cpp	
+kwic.o: kwic/kwic.cpp 
 	$(CC) $(CFLAGS) -c kwic/kwic.cpp
 # -----------------------------------------
 
@@ -20,10 +20,22 @@ kwic.o: kwic/kwic.cpp
 # -----------------------------------------
 # 					OUTPUT
 # -----------------------------------------
-outputs.o: baseoutput.o printoutput.o
+outputs.o: baseoutput.o printoutput.o textoutput.o xmloutput.o csvoutput.o htmloutput.o
 
 printoutput.o: baseoutput.o output/printoutput.cpp
 	$(CC) $(CFLAGS) -c output/printoutput.cpp
+
+xmloutput.o: baseoutput.o output/xmloutput.cpp
+	$(CC) $(CFLAGS) -c output/xmloutput.cpp
+
+csvoutput.o: baseoutput.o output/csvoutput.cpp
+	$(CC) $(CFLAGS) -c output/csvoutput.cpp
+
+htmloutput.o: baseoutput.o output/htmloutput.cpp
+	$(CC) $(CFLAGS) -c output/htmloutput.cpp
+
+textoutput.o: baseoutput.o output/textoutput.cpp
+	$(CC) $(CFLAGS) -c output/textoutput.cpp
 
 baseoutput.o: output/baseoutput.cpp
 	$(CC) $(CFLAGS) -c output/baseoutput.cpp
@@ -68,13 +80,22 @@ baseshift.o: shifter/baseshift.cpp
 # -----------------------------------------
 # 					INPUTS
 # -----------------------------------------
-inputs.o: baseinput.o textinput.o csvinput.o
+inputs.o: baseinput.o textinput.o csvinput.o xmlinput.o sqlinput.o dblpinput.o
 
 textinput.o: baseinput.o input/textinput.cpp 
 	$(CC) $(CFLAGS) -c input/textinput.cpp
 
 csvinput.o: baseinput.o input/csvinput.cpp 
 	$(CC) $(CFLAGS) -c input/csvinput.cpp
+
+xmlinput.o: baseinput.o input/xmlinput.cpp 
+	$(CC) $(CFLAGS) -c input/xmlinput.cpp
+
+dblpinput.o: baseinput.o input/dblpinput.cpp 
+	$(CC) $(CFLAGS) -c input/dblpinput.cpp
+
+sqlinput.o: baseinput.o input/sqlinput.cpp 
+	$(CC) $(CFLAGS) -c input/sqlinput.cpp
 
 baseinput.o: input/baseinput.cpp
 	$(CC) $(CFLAGS) -c input/baseinput.cpp
