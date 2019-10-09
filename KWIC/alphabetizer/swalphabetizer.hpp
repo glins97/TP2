@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
 
-#include "alphabetizer.hpp"
+#include "basealphabetizer.hpp"
 
 class SWAlphabetizerManager: public AlphabetizerManager{
     public:

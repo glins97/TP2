@@ -21,13 +21,13 @@ kwic: kwic/kwic.cpp alphabetizers inputs shifts outputs # USES ALL OTHERS
 # -----------------------------------------
 # 					OUTPUT
 # -----------------------------------------
-outputs: printoutput output 
+outputs: baseoutput printoutput  
 
 printoutput: output/printoutput.cpp
 	$(CC) $(CFLAGS) -c output/printoutput.cpp
 
-output: output/output.cpp
-	$(CC) $(CFLAGS) -c output/output.cpp
+baseoutput: output/baseoutput.cpp
+	$(CC) $(CFLAGS) -c output/baseoutput.cpp
 # -----------------------------------------
 
 
@@ -35,16 +35,16 @@ output: output/output.cpp
 # -----------------------------------------
 # 				ALPHABETIZER
 # -----------------------------------------
-alphabetizers: nswalphabetizer swalphabetizer alphabetizer
+alphabetizers: basealphabetizer nswalphabetizer swalphabetizer
 
-nswalphabetizer: alphabetizer alphabetizer/nswalphabetizer.cpp
+nswalphabetizer: basealphabetizer alphabetizer/nswalphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer/nswalphabetizer.cpp
 
-swalphabetizer: alphabetizer alphabetizer/swalphabetizer.cpp
+swalphabetizer: basealphabetizer alphabetizer/swalphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer/swalphabetizer.cpp
 
-alphabetizer: alphabetizer/alphabetizer.cpp
-	$(CC) $(CFLAGS) -c alphabetizer/alphabetizer.cpp
+basealphabetizer: alphabetizer/basealphabetizer.cpp
+	$(CC) $(CFLAGS) -c alphabetizer/basealphabetizer.cpp
 # -----------------------------------------
 
 
@@ -52,16 +52,16 @@ alphabetizer: alphabetizer/alphabetizer.cpp
 # -----------------------------------------
 # 					SHIFTS
 # -----------------------------------------
-shifts: rightshift leftshift shift
+shifts: baseshift rightshift leftshift
 
-rightshift: shift shifter/rightshift.cpp
+rightshift: baseshift shifter/rightshift.cpp
 	$(CC) $(CFLAGS) -c shifter/rightshift.cpp
 
-leftshift: shift shifter/leftshift.cpp
+leftshift: baseshift shifter/leftshift.cpp
 	$(CC) $(CFLAGS) -c shifter/leftshift.cpp
 
-shift: shifter/shift.cpp
-	$(CC) $(CFLAGS) -c shifter/shift.cpp
+baseshift: shifter/baseshift.cpp
+	$(CC) $(CFLAGS) -c shifter/baseshift.cpp
 # -----------------------------------------
 
 
@@ -69,16 +69,16 @@ shift: shifter/shift.cpp
 # -----------------------------------------
 # 					INPUTS
 # -----------------------------------------
-inputs: textinput csvinput input
+inputs: baseinput textinput csvinput
 
-textinput: input input/textinput.cpp 
+textinput: baseinput input/textinput.cpp 
 	$(CC) $(CFLAGS) -c input/textinput.cpp
 
-csvinput: input input/csvinput.cpp 
+csvinput: baseinput input/csvinput.cpp 
 	$(CC) $(CFLAGS) -c input/csvinput.cpp
 
-input: input/input.cpp
-	$(CC) $(CFLAGS) -c input/input.cpp
+baseinput: input/baseinput.cpp
+	$(CC) $(CFLAGS) -c input/baseinput.cpp
 # -----------------------------------------
 
 clean:

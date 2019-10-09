@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
 
-#include "output.hpp"
+#include "baseoutput.hpp"
 
 class PrintOutputManager: public OutputManager{
     public:

@@ -1,4 +1,4 @@
-#include "input.hpp"
+#include "baseinput.hpp"
 
 list<string> InputManager::_loadFile(char* filename){
     list<string> content = list<string>();

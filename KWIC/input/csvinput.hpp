@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
 
-#include "input.hpp"
+#include "baseinput.hpp"
 
 class CSVInputManager: public InputManager{
     public:

@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
 
-#include "shift.hpp"
+#include "baseshift.hpp"
 
 class LeftShifterManager: public ShifterManager{
     public:

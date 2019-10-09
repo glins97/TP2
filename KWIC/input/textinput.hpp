@@ -1,7 +1,7 @@
 #pragma once
 using namespace std;
 
-#include "input.hpp"
+#include "baseinput.hpp"
 
 class TextInputManager: public InputManager{
     public:
