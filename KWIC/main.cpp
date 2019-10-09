@@ -6,7 +6,7 @@
 using namespace std;
 
 void setKWIC(KWIC* variable){
-    char filename[] = "files/2";
+    char filename[] = "resources/2";
     *variable = KWIC(
         new TextInputManager(filename),
         new PrintOutputManager(),
