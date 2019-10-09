@@ -8,7 +8,7 @@ using namespace std;
 void setKWIC(KWIC* variable){
     char filename[] = "resources/2";
     *variable = KWIC(
-        new TextInputManager(filename),
+        new CSVInputManager(filename),
         new PrintOutputManager(),
         new NSWAlphabetizerManager(),
         new RightShifterManager());

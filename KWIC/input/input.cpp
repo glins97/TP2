@@ -1,23 +1,5 @@
 #include "input.hpp"
 
-TextInputManager::TextInputManager(char* filename){ 
-    this->filename = filename;
-};
-
-list<list<string>> TextInputManager::load(){
-    list<string> content = _loadFile(filename);
-    return this->_splitContent(content);
-}
-
-CSVInputManager::CSVInputManager(char* filename){ 
-    this->filename = filename;
-};
-
-list<list<string>> CSVInputManager::load(){
-    list<string> content = this->_loadFile(filename);
-    return this->_splitContent(content);
-}
-
 list<string> InputManager::_loadFile(char* filename){
     list<string> content = list<string>();
 

@@ -1,7 +1,6 @@
 #pragma once
 using namespace std;
 
-#include <iostream>
 #include <string>
 #include <list>
 #include <fstream>
@@ -16,16 +15,5 @@ class InputManager{
     list<string> _loadFile(char* filename);
 };
 
-class TextInputManager: public InputManager{
-    public:
-    char* filename;
-    list<list<string>> load();
-    TextInputManager(char* filename);
-};
-
-class CSVInputManager: public InputManager{
-    public:
-    char* filename;
-    list<list<string>> load();
-    CSVInputManager(char* filename);
-};
+#include "textinput.hpp"
+#include "csvinput.hpp"
