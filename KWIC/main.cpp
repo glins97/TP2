@@ -2,14 +2,20 @@
 #include "output.hpp"
 #include "alphabetizer.hpp"
 #include "shift.hpp"
+#include "kwic.hpp"
 using namespace std;
 
-int main(){
+void setKWIC(KWIC* variable){
     char filename[] = "files/2";
+    *variable = KWIC(
+        new TextInputManager(filename),
+        new PrintOutputManager(),
+        new NSWAlphabetizerManager(),
+        new RightShifterManager());
+}
 
-    auto titles = loadTitlesFromFilename(filename);
-    titles = shiftTitles(titles);
-    titles = sortTitles(titles);
-    printTitles(titles);
+int main(){
+    KWIC kwic; setKWIC(&kwic);
+    kwic.run();
     return 0;
 }

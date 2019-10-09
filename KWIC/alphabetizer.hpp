@@ -5,6 +5,16 @@ using namespace std;
 #include <string>
 #include <list>
 
-list<string> getLowestValueTitle(list<list<string>> titles);
-list<string> compareTitles(list<string> a, list<string> b);
-list<list<string>> sortTitles(list<list<string>> titles);
+class AlphabetizerManager{
+    public:
+    virtual list<list<string>> sort(list<list<string>> titles){ return list<list<string>>(); };
+    list<string> getLowestValueTitle(list<list<string>> titles);
+    list<string> compareTitles(list<string> a, list<string> b);
+};
+
+
+class NSWAlphabetizerManager: public AlphabetizerManager{
+    public:
+    list<list<string>> sort(list<list<string>> titles);
+};
+

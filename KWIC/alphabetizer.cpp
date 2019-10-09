@@ -1,6 +1,24 @@
 #include "alphabetizer.hpp"
 
-list<string> compareTitles(list<string> a, list<string> b){
+list<list<string>> NSWAlphabetizerManager::sort(list<list<string>> titles){
+    auto res = list<list<string>>();
+    while(titles.size()){
+        auto title = this->getLowestValueTitle(titles);
+        res.push_back(title);
+        titles.remove(title);
+    }
+    return res;
+}
+
+list<string> AlphabetizerManager::getLowestValueTitle(list<list<string>> titles){
+    auto lowest = titles.front();
+    for (auto title: titles){
+        lowest = this->compareTitles(lowest, title);
+    }
+    return lowest;
+}
+
+list<string> AlphabetizerManager::compareTitles(list<string> a, list<string> b){
     if (a == b)
         return a;
 
@@ -26,23 +44,3 @@ list<string> compareTitles(list<string> a, list<string> b){
 
     return base;
 }
-
-list<string> getLowestValueTitle(list<list<string>> titles){
-    auto lowest = titles.front();
-    for (auto title: titles){
-        lowest = compareTitles(lowest, title);
-    }
-    return lowest;
-}
-
-list<list<string>> sortTitles(list<list<string>> titles){
-    auto res = list<list<string>>();
-    while(titles.size()){
-        auto title = getLowestValueTitle(titles);
-        res.push_back(title);
-        titles.remove(title);
-    }
-    return res;
-}
-
-
