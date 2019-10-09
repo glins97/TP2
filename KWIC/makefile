@@ -1,6 +1,9 @@
 CFLAGS = -std=c++17 -O
 CC = g++
 
+# -----------------------------------------
+# 					MAIN
+# -----------------------------------------
 out: main
 	$(CC) $(CFLAGS) -o out *.o
 	./out
@@ -9,15 +12,27 @@ out: main
 main: kwic main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
-kwic: kwic/kwic.cpp alphabetizers inputs shifts output 
+kwic: kwic/kwic.cpp alphabetizers inputs shifts outputs # USES ALL OTHERS
 	$(CC) $(CFLAGS) -c kwic/kwic.cpp
+# -----------------------------------------
 
+
+
+# -----------------------------------------
+# 					OUTPUT
+# -----------------------------------------
+outputs: printoutput output 
+
+printoutput: output/printoutput.cpp
+	$(CC) $(CFLAGS) -c output/printoutput.cpp
 
 output: output/output.cpp
 	$(CC) $(CFLAGS) -c output/output.cpp
+# -----------------------------------------
 
 
 
+# -----------------------------------------
 # 				ALPHABETIZER
 # -----------------------------------------
 alphabetizers: nswalphabetizer swalphabetizer alphabetizer
@@ -34,6 +49,7 @@ alphabetizer: alphabetizer/alphabetizer.cpp
 
 
 
+# -----------------------------------------
 # 					SHIFTS
 # -----------------------------------------
 shifts: rightshift leftshift shift
@@ -50,6 +66,7 @@ shift: shifter/shift.cpp
 
 
 
+# -----------------------------------------
 # 					INPUTS
 # -----------------------------------------
 inputs: textinput csvinput input
