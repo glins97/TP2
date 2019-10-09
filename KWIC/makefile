@@ -9,18 +9,33 @@ out: main
 main: kwic main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
-kwic: kwic/kwic.cpp alphabetizer inputs shifts output 
+kwic: kwic/kwic.cpp alphabetizers inputs shifts output 
 	$(CC) $(CFLAGS) -c kwic/kwic.cpp
 
-alphabetizer: alphabetizer/alphabetizer.cpp
-	$(CC) $(CFLAGS) -c alphabetizer/alphabetizer.cpp
 
 output: output/output.cpp
 	$(CC) $(CFLAGS) -c output/output.cpp
 
 
-// 					SHIFTS
-// -----------------------------------------
+
+# 				ALPHABETIZER
+# -----------------------------------------
+alphabetizers: nswalphabetizer swalphabetizer alphabetizer
+
+nswalphabetizer: alphabetizer alphabetizer/nswalphabetizer.cpp
+	$(CC) $(CFLAGS) -c alphabetizer/nswalphabetizer.cpp
+
+swalphabetizer: alphabetizer alphabetizer/swalphabetizer.cpp
+	$(CC) $(CFLAGS) -c alphabetizer/swalphabetizer.cpp
+
+alphabetizer: alphabetizer/alphabetizer.cpp
+	$(CC) $(CFLAGS) -c alphabetizer/alphabetizer.cpp
+# -----------------------------------------
+
+
+
+# 					SHIFTS
+# -----------------------------------------
 shifts: rightshift leftshift shift
 
 rightshift: shift shifter/rightshift.cpp
@@ -31,11 +46,12 @@ leftshift: shift shifter/leftshift.cpp
 
 shift: shifter/shift.cpp
 	$(CC) $(CFLAGS) -c shifter/shift.cpp
-// -----------------------------------------
+# -----------------------------------------
 
 
-// 					INPUTS
-// -----------------------------------------
+
+# 					INPUTS
+# -----------------------------------------
 inputs: textinput csvinput input
 
 textinput: input input/textinput.cpp 
@@ -46,7 +62,7 @@ csvinput: input input/csvinput.cpp
 
 input: input/input.cpp
 	$(CC) $(CFLAGS) -c input/input.cpp
-// -----------------------------------------
+# -----------------------------------------
 
 clean:
 	rm -f out *.o 

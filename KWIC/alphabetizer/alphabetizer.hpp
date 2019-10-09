@@ -12,9 +12,5 @@ class AlphabetizerManager{
     list<string> compareTitles(list<string> a, list<string> b);
 };
 
-
-class NSWAlphabetizerManager: public AlphabetizerManager{
-    public:
-    list<list<string>> sort(list<list<string>> titles);
-};
-
+#include "nswalphabetizer.hpp"
+#include "swalphabetizer.hpp"
