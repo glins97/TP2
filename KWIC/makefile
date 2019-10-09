@@ -4,15 +4,14 @@ CC = g++
 # -----------------------------------------
 # 					MAIN
 # -----------------------------------------
-out: main
+out: main.o
 	$(CC) $(CFLAGS) -o out *.o
 	./out
-	rm -f *.o 
 
-main: kwic main.cpp
+main.o: kwic.o main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
-kwic: kwic/kwic.cpp alphabetizers inputs shifts outputs # USES ALL OTHERS
+kwic.o: kwic/kwic.cpp	
 	$(CC) $(CFLAGS) -c kwic/kwic.cpp
 # -----------------------------------------
 
@@ -21,12 +20,12 @@ kwic: kwic/kwic.cpp alphabetizers inputs shifts outputs # USES ALL OTHERS
 # -----------------------------------------
 # 					OUTPUT
 # -----------------------------------------
-outputs: baseoutput printoutput  
+outputs.o: baseoutput.o printoutput.o
 
-printoutput: output/printoutput.cpp
+printoutput.o: baseoutput.o output/printoutput.cpp
 	$(CC) $(CFLAGS) -c output/printoutput.cpp
 
-baseoutput: output/baseoutput.cpp
+baseoutput.o: output/baseoutput.cpp
 	$(CC) $(CFLAGS) -c output/baseoutput.cpp
 # -----------------------------------------
 
@@ -35,15 +34,15 @@ baseoutput: output/baseoutput.cpp
 # -----------------------------------------
 # 				ALPHABETIZER
 # -----------------------------------------
-alphabetizers: basealphabetizer nswalphabetizer swalphabetizer
+alphabetizers.o: basealphabetizer.o nswalphabetizer.o swalphabetizer.o
 
-nswalphabetizer: basealphabetizer alphabetizer/nswalphabetizer.cpp
+nswalphabetizer.o: basealphabetizer.o alphabetizer/nswalphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer/nswalphabetizer.cpp
 
-swalphabetizer: basealphabetizer alphabetizer/swalphabetizer.cpp
+swalphabetizer.o: basealphabetizer.o alphabetizer/swalphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer/swalphabetizer.cpp
 
-basealphabetizer: alphabetizer/basealphabetizer.cpp
+basealphabetizer.o: alphabetizer/basealphabetizer.cpp
 	$(CC) $(CFLAGS) -c alphabetizer/basealphabetizer.cpp
 # -----------------------------------------
 
@@ -52,15 +51,15 @@ basealphabetizer: alphabetizer/basealphabetizer.cpp
 # -----------------------------------------
 # 					SHIFTS
 # -----------------------------------------
-shifts: baseshift rightshift leftshift
+shifts.o: baseshift.o rightshift.o leftshift.o
 
-rightshift: baseshift shifter/rightshift.cpp
+rightshift.o: baseshift.o shifter/rightshift.cpp
 	$(CC) $(CFLAGS) -c shifter/rightshift.cpp
 
-leftshift: baseshift shifter/leftshift.cpp
+leftshift.o: baseshift.o shifter/leftshift.cpp
 	$(CC) $(CFLAGS) -c shifter/leftshift.cpp
 
-baseshift: shifter/baseshift.cpp
+baseshift.o: shifter/baseshift.cpp
 	$(CC) $(CFLAGS) -c shifter/baseshift.cpp
 # -----------------------------------------
 
@@ -69,15 +68,15 @@ baseshift: shifter/baseshift.cpp
 # -----------------------------------------
 # 					INPUTS
 # -----------------------------------------
-inputs: baseinput textinput csvinput
+inputs.o: baseinput.o textinput.o csvinput.o
 
-textinput: baseinput input/textinput.cpp 
+textinput.o: baseinput.o input/textinput.cpp 
 	$(CC) $(CFLAGS) -c input/textinput.cpp
 
-csvinput: baseinput input/csvinput.cpp 
+csvinput.o: baseinput.o input/csvinput.cpp 
 	$(CC) $(CFLAGS) -c input/csvinput.cpp
 
-baseinput: input/baseinput.cpp
+baseinput.o: input/baseinput.cpp
 	$(CC) $(CFLAGS) -c input/baseinput.cpp
 # -----------------------------------------
 
