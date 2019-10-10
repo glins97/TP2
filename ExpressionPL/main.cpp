@@ -1,10 +1,15 @@
 using namespace std;
 
 #include "manager/manager.hpp"
+#include <iostream>
 
 int main(){
-    Manager manager = Manager();
-    manager.operators.push_back(new AddExp());
-    manager.operators.push_back(new LiteralExp());
-    manager.run("1+1");
+    Manager manager = Manager(vector<ExpBase*>({
+        new AddExp(),
+        new NegExp(),
+        new LiteralExp()
+    }));
+
+    manager.run("2 + 9 - 3");
+    cout << "Final result: " <<  manager.value << endl;
 }

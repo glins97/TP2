@@ -15,13 +15,16 @@ manager.o: manager/manager.cpp
 # -----------------------------------------
 # 				Expression
 # -----------------------------------------
-expressions.o: base.o add.o literal.o
+expressions.o: base.o add.o literal.o neg.o
 
 literal.o: base.o expression/literal.cpp 
 	$(CC) $(CFLAGS) -c expression/literal.cpp
 
 add.o: base.o expression/add.cpp 
 	$(CC) $(CFLAGS) -c expression/add.cpp
+
+neg.o: base.o expression/neg.cpp 
+	$(CC) $(CFLAGS) -c expression/neg.cpp
 
 base.o: expression/base.cpp
 	$(CC) $(CFLAGS) -c expression/base.cpp

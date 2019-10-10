@@ -19,13 +19,17 @@ class Manager{
             recursively calls its manager run; 
     */
     public:
-    int value;
+    int value = 0;
     Manager* left;
     Manager* right;
     ExpBase* selected_operator;
-    string expression;
+    string expression = "0";
     vector<ExpBase*> operators;
 
-    Manager();
+    Manager(vector<ExpBase*> operators);
+    void split(string input, int split_index);
     void run(string expression);
+    int eval();
+    string trim(string input);
+
 };

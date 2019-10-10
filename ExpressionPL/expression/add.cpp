@@ -1,9 +1,16 @@
 #include "add.hpp"
+#include "iostream"
 
-bool AddExp::identify(string expression){
+int AddExp::identify(string expression){
+    int index = 0;
     for (auto chr: expression){
-        if (chr == this->op[0])
-            return true;
+        if (chr == '+')
+            return index;
+        index++;
     }
-    return false;
+    return -1;
+}
+
+int AddExp::eval(string lexp, string rexp, int lv, int rv){
+    return lv + rv;
 }

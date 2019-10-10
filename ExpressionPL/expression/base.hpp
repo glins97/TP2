@@ -6,8 +6,8 @@ using namespace std;
 
 class ExpBase{
     public:
-    string op;
-    virtual bool identify(string expression){return false;};
+    virtual int eval(string lexp, string rexp, int lv, int rv){return 0;};
+    virtual int identify(string expression){return false;};
 };
 
 #include "base.hpp"

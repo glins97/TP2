@@ -1,10 +1,26 @@
 #include "literal.hpp"
+#include "iostream"
 
-bool LiteralExp::identify(string expression){
+int LiteralExp::identify(string expression){
     string numbers = "0123456789";
+
+    if (expression == "" || expression == " ") return -1;
+    int index = 0;
     for (auto chr: expression){
-        for (auto n: numbers)
-            if (chr != n) return false; 
+        bool nan = true;
+        if (chr == ' '){
+            index++;
+            continue;
+        }
+        for (auto n: numbers){
+            if (chr == n) 
+                nan = false; 
+        }
+        if (nan) return -1;
     }
-    return true;
+    return index;
+}
+
+int LiteralExp::eval(string lexp, string rexp, int lv, int rv){
+    return stoi(lexp) + stoi(rexp);
 }
