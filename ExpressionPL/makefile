@@ -15,7 +15,7 @@ manager.o: manager/manager.cpp
 # -----------------------------------------
 # 				Expression
 # -----------------------------------------
-expressions.o: base.o add.o literal.o neg.o
+expressions.o: base.o add.o literal.o neg.o mul.o pow.o
 
 literal.o: base.o expression/literal.cpp 
 	$(CC) $(CFLAGS) -c expression/literal.cpp
@@ -25,6 +25,12 @@ add.o: base.o expression/add.cpp
 
 neg.o: base.o expression/neg.cpp 
 	$(CC) $(CFLAGS) -c expression/neg.cpp
+
+mul.o: base.o expression/mul.cpp 
+	$(CC) $(CFLAGS) -c expression/mul.cpp
+
+pow.o: base.o expression/pow.cpp 
+	$(CC) $(CFLAGS) -c expression/pow.cpp
 
 base.o: expression/base.cpp
 	$(CC) $(CFLAGS) -c expression/base.cpp

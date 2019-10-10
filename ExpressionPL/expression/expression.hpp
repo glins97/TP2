@@ -2,3 +2,5 @@
 #include "literal.hpp"
 #include "add.hpp"
 #include "neg.hpp"
+#include "mul.hpp"
+#include "pow.hpp"
