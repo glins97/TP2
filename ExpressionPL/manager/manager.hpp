@@ -27,7 +27,7 @@ class Manager{
     vector<ExpBase*> operators;
 
     Manager(vector<ExpBase*> operators);
-    void split(string input, int split_index);
+    void split(string input);
     void run(string expression);
     int eval();
     string trim(string input);

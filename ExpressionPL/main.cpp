@@ -10,6 +10,6 @@ int main(){
         new LiteralExp()
     }));
 
-    manager.run("2 + 9 - 3");
+    manager.run("100 - 20");
     cout << "Final result: " <<  manager.value << endl;
 }

@@ -15,33 +15,32 @@ void Manager::run(string input){
     for (auto op: this->operators){
         split_index = op->identify(input);
         if (split_index > -1){
-            cout << "Splitting on: '" << input[split_index] << "'" << endl;
             this->selected_operator = op;
-            this->split(input, split_index);
+            this->split(input);
             break;
         }
     }
-
 }
 
-void Manager::split(string input, int split_index){
+void Manager::split(string input){
     input = this->trim(input);
 
-    string left_input = trim(input.substr(0, split_index));
-    string right_input = trim(input.substr(split_index+1, input.length()));
+    string left_input;
+    string right_input;
 
     this->left = new Manager(this->operators);
-    this->left->expression = this->expression;
     this->right = new Manager(this->operators);
+    this->selected_operator->
+        get_splits(input, &left_input, &right_input);
+
+    if (left_input == "" && right_input == "")
+        this->left->expression = input;    
+
     if (left_input != ""){
-        cout << "Left -> ";
-        cout << "'" << left_input << "'" << endl;
         this->left->run(left_input);
     }
 
     if (right_input != ""){
-        cout << "Right -> ";
-        cout << "'" << right_input << "'" << endl;
         this->right->run(right_input);
     }
 

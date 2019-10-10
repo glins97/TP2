@@ -24,3 +24,11 @@ int LiteralExp::identify(string expression){
 int LiteralExp::eval(string lexp, string rexp, int lv, int rv){
     return stoi(lexp) + stoi(rexp);
 }
+
+
+void LiteralExp::get_splits(string input, string* left_input, string* right_input){
+    int split_index = this->identify(input);
+    
+    *left_input = "";
+    *right_input = "";
+}
