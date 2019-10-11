@@ -4,13 +4,12 @@ using namespace std;
 #include <iostream>
 
 int main(){
-    auto l = new LiteralExp();
     auto factory = ManagerFactory(vector<ExpBase*>({
         new AddExp(),
         new NegExp(),
         new MulExp(),
         new PowExp(),
-        l
+        new LiteralExp()
     }));
 
     auto manager = factory.request(vector<string>({
