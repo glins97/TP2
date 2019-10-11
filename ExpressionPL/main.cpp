@@ -12,6 +12,6 @@ int main(){
         new LiteralExp()
     }));
 
-    manager.run("2 ^ 8 + 3 * 2 - 5 + 2 ^ 2");
+    manager.run("3 + -2 * 2^2 + 2 ^ 2 ");
     cout << "Final result: " <<  manager.value << endl;
 }

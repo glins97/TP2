@@ -11,6 +11,3 @@ class AlphabetizerManager{
     list<string> getLowestValueTitle(list<list<string>> titles);
     list<string> compareTitles(list<string> a, list<string> b);
 };
-
-#include "crappyalphabetizer.hpp"
-#include "quickalphabetizer.hpp"

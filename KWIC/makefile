@@ -8,6 +8,9 @@ out: main.o kwic.o inputs.o outputs.o alphabetizers.o shifts.o
 	$(CC) $(CFLAGS) -o out *.o
 	./out
 
+kwic.o: kwic/kwic.cpp
+	$(CC) $(CFLAGS) -c kwic/kwic.cpp 
+
 main.o: kwic/kwic.cpp main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 # -----------------------------------------

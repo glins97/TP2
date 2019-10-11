@@ -16,9 +16,3 @@ class BaseInputManager{
     list<list<string>> _splitContent(list<string> content);
     list<string> _loadFile(char* filename);
 };
-
-#include "textinput.hpp"
-#include "csvinput.hpp"
-#include "xmlinput.hpp"
-#include "sqlinput.hpp"
-#include "dblpinput.hpp"

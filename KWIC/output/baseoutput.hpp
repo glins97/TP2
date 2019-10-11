@@ -11,9 +11,3 @@ class BaseOutputManager{
         cout << "BaseOutputManager dump" << endl;        
     };
 };
-
-#include "printoutput.hpp"
-#include "textoutput.hpp"
-#include "csvoutput.hpp"
-#include "xmloutput.hpp"
-#include "htmloutput.hpp"

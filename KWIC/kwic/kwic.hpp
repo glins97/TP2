@@ -4,10 +4,10 @@ using namespace std;
 #include <list>
 #include <string>
 
-#include "../input/baseinput.hpp"
-#include "../output/baseoutput.hpp"
-#include "../alphabetizer/basealphabetizer.hpp"
-#include "../shifter/baseshift.hpp"
+#include "../input/inputs.hpp"
+#include "../output/outputs.hpp"
+#include "../alphabetizer/alphabetizers.hpp"
+#include "../shifter/shifters.hpp"
 
 class KWIC{
     public:
