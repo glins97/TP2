@@ -1,15 +1,23 @@
 CFLAGS = -O
 CC = g++
 
-out: main.o main.o manager.o expressions.o
+out: main.o main.o manager.o factory.o expressions.o
 	$(CC) $(CFLAGS) -o out *.o
 	./out
 
 main.o: main.cpp 
 	$(CC) $(CFLAGS) -c main.cpp  
 
+
+# -----------------------------------------
+# 				Managers
+# -----------------------------------------
+factory.o: manager/factory.cpp 
+	$(CC) $(CFLAGS) -c manager/factory.cpp
+
 manager.o: manager/manager.cpp 
 	$(CC) $(CFLAGS) -c manager/manager.cpp
+# -----------------------------------------
 
 
 # -----------------------------------------

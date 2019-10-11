@@ -8,18 +8,28 @@ Manager::Manager(vector<ExpBase*> operators){
     this->selected_operator = nullptr;
 }
 
+void Manager::eval(string input){
+    this->run(input);
+    cout << "Result: " <<  this->value << endl;
+}
+
 void Manager::run(string input){
     this->expression = input;
 
     int split_index = -1;
+    bool operator_matched = false;
     for (auto op: this->operators){
         split_index = op->identify(input);
         if (split_index > -1){
+            operator_matched = true;
             this->selected_operator = op;
             this->split(input);
             break;
         }
     }
+
+    if (!operator_matched)
+        cout << "Expression '" << this->expression << "' has no operator matches." << endl;
 }
 
 void Manager::split(string input){

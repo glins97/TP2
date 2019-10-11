@@ -6,6 +6,7 @@ using namespace std;
 
 class ExpBase{
     public:
+    virtual string get_op(){ return "B"; };
     virtual int eval(string lexp, string rexp, int lv, int rv){return 0;};
     virtual int identify(string expression){return false;};
     virtual void get_splits(string input, string* left_input, string* right_input);

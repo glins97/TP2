@@ -1,17 +1,20 @@
 using namespace std;
 
-#include "manager/manager.hpp"
+#include "manager/factory.hpp"
 #include <iostream>
 
 int main(){
-    Manager manager = Manager(vector<ExpBase*>({
+    auto l = new LiteralExp();
+    auto factory = ManagerFactory(vector<ExpBase*>({
         new AddExp(),
         new NegExp(),
         new MulExp(),
         new PowExp(),
-        new LiteralExp()
+        l
     }));
 
-    manager.run("3 + -2 * 2^2 + 2 ^ 2 ");
-    cout << "Final result: " <<  manager.value << endl;
+    auto manager = factory.request(vector<string>({
+        "L", "+"
+    }));
+    manager.eval("100 + 10");
 }
