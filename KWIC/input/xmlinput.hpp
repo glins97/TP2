@@ -5,7 +5,7 @@ using namespace std;
 
 class XMLInputManager: public BaseInputManager{
     public:
-    char* filename;
+    string filename;
     list<list<string>> load();
-    XMLInputManager(char* filename);
+    XMLInputManager(string filename);
 };

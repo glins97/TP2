@@ -5,6 +5,7 @@ using namespace std;
 #include <list>
 #include <fstream>
 #include <iostream>
+#include <bits/stdc++.h> 
 
 class BaseInputManager{
     public:
@@ -14,5 +15,5 @@ class BaseInputManager{
     
     list<string> _splitTitle(string title);
     list<list<string>> _splitContent(list<string> content);
-    list<string> _loadFile(char* filename);
+    list<string> _loadFile(string filename);
 };

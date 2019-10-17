@@ -5,7 +5,7 @@ using namespace std;
 
 class CSVInputManager: public BaseInputManager{
     public:
-    char* filename;
+    string filename;
     list<list<string>> load();
-    CSVInputManager(char* filename);
+    CSVInputManager(string filename);
 };

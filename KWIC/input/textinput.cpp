@@ -1,6 +1,6 @@
 #include "textinput.hpp"
 
-TextInputManager::TextInputManager(char* filename){ 
+TextInputManager::TextInputManager(string filename){
     this->filename = filename;
 };
 

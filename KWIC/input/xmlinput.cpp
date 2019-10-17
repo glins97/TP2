@@ -1,6 +1,6 @@
 #include "xmlinput.hpp"
 
-XMLInputManager::XMLInputManager(char* filename){ 
+XMLInputManager::XMLInputManager(string filename){ 
     this->filename = filename;
 };
 

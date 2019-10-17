@@ -1,6 +1,6 @@
 #include "csvinput.hpp"
 
-CSVInputManager::CSVInputManager(char* filename){ 
+CSVInputManager::CSVInputManager(string filename){ 
     this->filename = filename;
 };
 

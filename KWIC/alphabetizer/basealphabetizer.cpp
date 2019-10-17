@@ -1,6 +1,6 @@
 #include "basealphabetizer.hpp"
 
-list<string> AlphabetizerManager::getLowestValueTitle(list<list<string>> titles){
+list<string> BaseAlphabetizerManager::getLowestValueTitle(list<list<string>> titles){
     auto lowest = titles.front();
     for (auto title: titles){
         lowest = this->compareTitles(lowest, title);
@@ -8,7 +8,7 @@ list<string> AlphabetizerManager::getLowestValueTitle(list<list<string>> titles)
     return lowest;
 }
 
-list<string> AlphabetizerManager::compareTitles(list<string> a, list<string> b){
+list<string> BaseAlphabetizerManager::compareTitles(list<string> a, list<string> b){
     if (a == b)
         return a;
 

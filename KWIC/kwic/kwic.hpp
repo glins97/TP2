@@ -15,11 +15,11 @@ class KWIC{
 
     BaseInputManager* inputManager;
     BaseOutputManager* outputManager;
-    AlphabetizerManager* alphabetizerManager;
-    ShifterManager* shifterManager;
+    BaseAlphabetizerManager* alphabetizerManager;
+    BaseShifterManager* shifterManager;
 
     void run();
     KWIC();
     KWIC(BaseInputManager* inputManager, BaseOutputManager* outputManager,
-        AlphabetizerManager* alphabetizerManager, ShifterManager* shifterManager);
+        BaseAlphabetizerManager* alphabetizerManager, BaseShifterManager* shifterManager);
 };

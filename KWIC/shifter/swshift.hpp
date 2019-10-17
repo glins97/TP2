@@ -3,7 +3,7 @@ using namespace std;
 
 #include "baseshift.hpp"
 
-class StopWordsShifterManager: public ShifterManager{
+class StopWordsShifterManager: public BaseShifterManager{
     public:
     list<string> sw;
     list<list<string>> shift(list<list<string>> titles);

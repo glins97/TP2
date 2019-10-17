@@ -1,9 +1,12 @@
 #include "baseinput.hpp"
 
-list<string> BaseInputManager::_loadFile(char* filename){
+list<string> BaseInputManager::_loadFile(string filename){
     list<string> content = list<string>();
+    
+    char filename_[filename.length() + 1]; 
+    strcpy(filename_, filename.c_str()); 
 
-    FILE* fp = fopen(filename, "r");
+    FILE* fp = fopen(filename_, "r");
     if (fp == NULL)
         exit(1);
 

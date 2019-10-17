@@ -2,7 +2,7 @@
 
 KWIC::KWIC(){};
 KWIC::KWIC(BaseInputManager* inputManager, BaseOutputManager* outputManager,
-        AlphabetizerManager* alphabetizerManager, ShifterManager* shifterManager){
+        BaseAlphabetizerManager* alphabetizerManager, BaseShifterManager* shifterManager){
     this->inputManager = inputManager;
     this->outputManager = outputManager;
     this->alphabetizerManager = alphabetizerManager;

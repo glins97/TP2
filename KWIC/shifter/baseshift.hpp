@@ -6,7 +6,10 @@ using namespace std;
 #include <list>
 #include <iostream>
 
-class ShifterManager{
+class BaseShifterManager{
     public:
-    virtual list<list<string>> shift(list<list<string>> titles){ return list<list<string>>(); };
+    virtual list<list<string>> shift(list<list<string>> titles){ 
+        cout << "BaseShifterManager shift" << endl;        
+        return list<list<string>>();
+    };
 };

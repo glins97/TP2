@@ -5,7 +5,7 @@ using namespace std;
 
 class TextInputManager: public BaseInputManager{
     public:
-    char* filename;
+    string filename;
     list<list<string>> load();
-    TextInputManager(char* filename);
+    TextInputManager(string filename);
 };
