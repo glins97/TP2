@@ -44,7 +44,12 @@ public class Main {
 
         System.out.print(message);
         while(choice < 1 || choice > messages.size()){
-            choice = Integer.valueOf(requestInput("Enter a choice: "));
+            try{
+                choice = Integer.valueOf(requestInput("Enter a choice: "));
+            }
+            catch (NumberFormatException e){
+                choice = 0;
+            }
             if (choice < 1 || choice > messages.size()){
                 System.out.println("Choice not available, try again.");
             }

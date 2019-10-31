@@ -33,7 +33,9 @@ public class Main {
 
         System.out.print(message);
         while(choice < 1 || choice > messages.size()){
-            choice = Integer.valueOf(requestInput("Enter a choice: "));
+            String input = requestInput("Enter a choice: ");
+            assert !input.equals(""): "Choice should not be empty";
+            choice = Integer.valueOf(input);
             if (choice < 1 || choice > messages.size()){
                 System.out.println("Choice not available, try again.");
             }
