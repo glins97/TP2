@@ -1,5 +1,0 @@
-#include "textinput.hpp"
-#include "csvinput.hpp"
-#include "xmlinput.hpp"
-#include "sqlinput.hpp"
-#include "dblpinput.hpp"
