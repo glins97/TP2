@@ -12,6 +12,19 @@ public class Input {
 
     public Input(){}
 
+    public List<String> streamKeyboardInputs(){
+        System.out.println("Enter desired words: ");
+
+        List<String> inputs = new ArrayList<String>();
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        while (!line.toLowerCase().equals("$done")){
+            inputs.add(line);
+            line = scanner.nextLine();
+        }
+        return inputs;
+    }
+
     public List<String> loadWords(String filename){
         List<String> words = new ArrayList<String>();
         File file = new File("/home/glins/Documents/UnB/Matérias/TP2/T2/resources/input/" + filename);

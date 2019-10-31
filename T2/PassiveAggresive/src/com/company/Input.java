@@ -3,6 +3,7 @@ package com.company;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -11,6 +12,19 @@ import java.util.regex.Pattern;
 public class Input {
 
     public Input(){}
+
+    public List<String> streamKeyboardInputs(){
+        System.out.println("Enter desired words: ");
+
+        List<String> inputs = new ArrayList<String>();
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        while (!line.toLowerCase().equals("$done")){
+            inputs.add(line);
+            line = scanner.nextLine();
+        }
+        return inputs;
+    }
 
     public List<String> loadWords(String filename){
         assert filename.length() != 0: "Filename should have at least a letter!";
@@ -63,8 +77,7 @@ public class Input {
     }
 
     public List<String> removeStopWords(List<String> words, List<String> stopWords){
-        assert words.size() != 0: "Word list is empty! Can't remove stop words!";
-        assert stopWords.size() != 0: "Stop words is empty!";
+        assert words.size() != 0: "Word list is empty!";
 
         int index = 0;
         for (String word: new ArrayList<>(words)){
