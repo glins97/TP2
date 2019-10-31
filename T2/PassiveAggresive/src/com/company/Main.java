@@ -67,15 +67,21 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        main.requestConfigs();
-        List<String> words = main.input.loadWords(main.inputFilename);
-        words = main.input.normalizeWords(words);
-        words = main.input.filterWords(words);
-        words = main.input.removeStopWords(words, main.stopWords);
+        try{
+            main.requestConfigs();
+            List<String> words = main.input.loadWords(main.inputFilename);
+            words = main.input.normalizeWords(words);
+            words = main.input.filterWords(words);
+            words = main.input.removeStopWords(words, main.stopWords);
 
-        Map<String, Integer> map = main.counter.getFrequencyList(words);
-        map = main.output.sortMapByValues(map);
-        main.output.saveMap(map, main.outputFilename);
-        main.output.printMap(map, 15);
+            Map<String, Integer> map = main.counter.getFrequencyList(words);
+            map = main.output.sortMapByValues(map);
+            main.output.saveMap(map, main.outputFilename);
+            main.output.printMap(map, 15);
+        }
+        catch (AssertionError e) {
+            System.out.println("\n[ASSERT ERROR] Something went wrong! -> '" + e.getMessage() + "'");
+        }
+
     }
 }
