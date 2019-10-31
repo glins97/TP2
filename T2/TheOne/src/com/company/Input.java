@@ -27,7 +27,7 @@ public class Input {
 
     public List<String> loadWords(String filename){
         List<String> words = new ArrayList<String>();
-        File file = new File("/home/glins/Documents/UnB/Matérias/TP2/T2/resources/input/" + filename);
+        File file = new File("../resources/input/" + filename);
         Scanner sc = null;
         try {
             sc = new Scanner(file);

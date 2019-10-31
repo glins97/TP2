@@ -57,7 +57,7 @@ public class Output {
         Map<String, Integer> map = (HashMap<String, Integer>) map_;
         Integer index = 0;
         try{
-            FileWriter file = new FileWriter("/home/glins/Documents/UnB/Matérias/TP2/T2/resources/output/" + filename);
+            FileWriter file = new FileWriter("../resources/output/" + filename);
             BufferedWriter writer = new BufferedWriter(file);
             writer.write("Rank,Word,Count\n");
             for (String key: map.keySet()){
