@@ -67,21 +67,27 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        try{
-            main.requestConfigs();
-            List<String> words = main.input.loadWords(main.inputFilename);
-            words = main.input.normalizeWords(words);
-            words = main.input.filterWords(words);
-            words = main.input.removeStopWords(words, main.stopWords);
+        Boolean done = false;
+        while (!done){
+            try{
+                done = true;
+                main.requestConfigs();
+                List<String> words = main.input.loadWords(main.inputFilename);
+                words = main.input.normalizeWords(words);
+                words = main.input.filterWords(words);
+                words = main.input.removeStopWords(words, main.stopWords);
 
-            Map<String, Integer> map = main.counter.getFrequencyList(words);
-            map = main.output.sortMapByValues(map);
-            main.output.saveMap(map, main.outputFilename);
-            main.output.printMap(map, 15);
+                Map<String, Integer> map = main.counter.getFrequencyList(words);
+                map = main.output.sortMapByValues(map);
+                main.output.saveMap(map, main.outputFilename);
+                main.output.printMap(map, 15);
+            }
+            catch (AssertionError e) {
+                System.out.println("\n[ASSERT ERROR] Something went wrong! -> '" + e.getMessage() + "'");
+                if (main.requestInput("Enter 'yes' to try again: ").equals("yes")) done = false;
+            }
         }
-        catch (AssertionError e) {
-            System.out.println("\n[ASSERT ERROR] Something went wrong! -> '" + e.getMessage() + "'");
-        }
+
 
     }
 }
