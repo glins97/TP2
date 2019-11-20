@@ -12,7 +12,7 @@ public class Output {
 
     public Output(){}
 
-    public LinkedHashMap sortMapByValues(Object map_){
+    public LinkedHashMap<String, Integer> sortMapByValues(Object map_){
         Map<String, Integer> map = (HashMap<String, Integer>) map_;
         return  map.entrySet().stream()
                     .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
