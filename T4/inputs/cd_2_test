@@ -1,0 +1,8 @@
+spawn java -jar iris-console-0.3.1.jar
+
+expect "iris > "
+send "cd 2\r"
+expect "iris > "
+send "quit\r"
+
+expect
