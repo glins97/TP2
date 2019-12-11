@@ -85,7 +85,7 @@ def _help():
     print('Please enter a parameter. Choices are:')
     print('  (-h) or (--help)\t- this menu;')
     print('  (-l) or (--list)\t- show all tests;')
-    print('  (-a) or (--all)\t\t- run all tests;')
+    print('  (-a) or (--all)\t- run all tests;')
     print('  (-t <test_filename>)\t- run only test in specified filename;')
     print('\n')
 
