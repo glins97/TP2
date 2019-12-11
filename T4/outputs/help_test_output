@@ -1,0 +1,51 @@
+spawn java -jar iris-console-0.3.1.jar
+Loading properties ...
+Load properties: /home/glins/.iris/default_provider.properties
+Load properties: /home/glins/.iris/account.properties
+Parsing configuration ...
+Scanning commands ...
+Adding command: ab
+Adding command: download
+Adding command: quit
+Adding command: read
+Adding command: tag
+Adding command: lp
+Adding command: get
+Adding command: lf
+Adding command: ls
+Adding command: send
+Adding command: status
+Adding command: pwd
+Adding command: load
+Adding command: search
+Adding command: help
+Adding command: connect
+Adding command: cd
+Total commands found: 17
+Welcome to IRIS (interpreter) mail client
+version 0.3.0.
+Type "help" for instructions.
+iris > help
+(ab list) - show the address book entries
+(ab add <name> <email>) - add an address book entry (name=email)
+(ab del <name> - delete an address book entry
+(download) - Download messages from remote server and persist on local database 
+(quit) - Exit this program 
+(read <id_msg>) - read specified message)
+(tag list) - show existing tags
+(tag list <tag>) - messages containing specified tag
+(tag add <messageID> <tags>) - add tag(s) to a message. EX: tag add 10 tag1, tag2
+(lp) - List available providers 
+(get) - List existing folders 
+(lf) - List existing folders 
+(ls) - list messages from current folder (local database)
+(send) - Compose and send a new message 
+(status) - Show the current system status 
+(pwd) - show current folder)
+(load) - Testando carga dinamica de command 
+(search <query>) - Search emails by any field 
+(help) - Explain basic usage of each command 
+(connect) - Connect to a provider, enabling sending and receiving email from the provider 
+(cd <id_folder>) - change current folder)
+iris > quit
+Bye!

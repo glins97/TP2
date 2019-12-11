@@ -1,0 +1,24 @@
+TODO:
+(ab del <name> - delete an address book entry
+(download) - Download messages from remote server and persist on local database 
+(quit) - Exit this program 
+(read <id_msg>) - read specified message)
+(tag list) - show existing tags
+(tag list <tag>) - messages containing specified tag
+(tag add <messageID> <tags>) - add tag(s) to a message. EX: tag add 10 tag1, tag2
+(get) - List existing folders 
+(send) - Compose and send a new message 
+(load) - Testando carga dinamica de command 
+(search <query>) - Search emails by any field 
+(cd <id_folder>) - change current folder)
+
+DONE:
+(help) - Explain basic usage of each command 
+(connect) - Connect to a provider, enabling sending and receiving email from the provider 
+(status) - Show the current system status
+(lp) - List available providers 
+(lf) - List existing folders             *****[rodando com o expect tem uns warnings]*****
+(ls) - list messages from current folder (local database)
+(pwd) - show current folder)
+(ab add <name> <email>) - add an address book entry (name=email)    *****[name: marcella; email: marcellapantarotto@gmail.com]*****
+(ab list) - show the address book entries

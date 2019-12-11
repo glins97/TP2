@@ -1,0 +1,40 @@
+spawn java -jar iris-console-0.3.1.jar
+Loading properties ...
+Load properties: /home/glins/.iris/default_provider.properties
+Load properties: /home/glins/.iris/account.properties
+Parsing configuration ...
+Scanning commands ...
+Adding command: ab
+Adding command: download
+Adding command: quit
+Adding command: read
+Adding command: tag
+Adding command: lp
+Adding command: get
+Adding command: lf
+Adding command: ls
+Adding command: send
+Adding command: status
+Adding command: pwd
+Adding command: load
+Adding command: search
+Adding command: help
+Adding command: connect
+Adding command: cd
+Total commands found: 17
+Welcome to IRIS (interpreter) mail client
+version 0.3.0.
+Type "help" for instructions.
+iris > ab add marcella marcellapantarotto@gmail.com
+br.unb.cic.iris.core.SystemFacade@5731caaf
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/home/glins/Documents/UnB/Mat%c3%a9rias/TP2/T4/iris-console-0.3.1.jar) to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
+WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+dez 11, 2019 8:11:30 PM br.unb.cic.iris.addressbook.persistence.sqlite3.MapAddressBook ajc$after$br_unb_cic_iris_addressbook_persistence_sqlite3_MapAddressBook$1$45c88da8
+SEVERE: Mapping AddressBookEntry to Hibernate CFG
+dez 11, 2019 8:11:30 PM br.unb.cic.iris.tag.persistence.sqlite3.MapTag ajc$after$br_unb_cic_iris_tag_persistence_sqlite3_MapTag$1$45c88da8
+SEVERE: Mapping AddressBookEntry to Hibernate CFG
+iris > quit
+Bye!

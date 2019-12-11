@@ -1,0 +1,31 @@
+spawn java -jar iris-console-0.3.1.jar
+Loading properties ...
+Load properties: /home/glins/.iris/default_provider.properties
+Load properties: /home/glins/.iris/account.properties
+Parsing configuration ...
+Scanning commands ...
+Adding command: ab
+Adding command: download
+Adding command: quit
+Adding command: read
+Adding command: tag
+Adding command: lp
+Adding command: get
+Adding command: lf
+Adding command: ls
+Adding command: send
+Adding command: status
+Adding command: pwd
+Adding command: load
+Adding command: search
+Adding command: help
+Adding command: connect
+Adding command: cd
+Total commands found: 17
+Welcome to IRIS (interpreter) mail client
+version 0.3.0.
+Type "help" for instructions.
+iris > pwd
+ROOT
+iris > quit
+Bye!
