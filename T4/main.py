@@ -6,7 +6,7 @@ import sys
 from config import TEST_INPUTS_DIR, TEST_OUTPUTS_DIR
 
 def get_test_files():
-    return os.listdir(TEST_INPUTS_DIR)
+    return sorted(os.listdir(TEST_INPUTS_DIR))
 
 def clean_str(s):
     lines = s.split('\n')
