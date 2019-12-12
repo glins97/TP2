@@ -1,0 +1,35 @@
+ORDER OF TESTS:
+
+(help) - Explain basic usage of each command 
+(lp) - List available providers 
+(connect) - Connect to a provider, enabling sending and receiving email from the provider 
+(status) - Show the current system status
+
+(ab add <name> <email>) - add an address book entry (name=email)    *****[name: marcella; email: marcellapantarotto@gmail.com]*****
+(ab list) - show the address book entries
+(send) - Compose and send a new message 
+
+(lf) - List existing folders        
+(cd <id_folder>) - change current folder)               <<<[cd 1 - INBOX]>>>
+(pwd) - show current folder)
+(ls) - list messages from current folder (local database)
+(read <id_msg>) - read specified message)
+(download) - Download messages from remote server and persist on local database 
+(get) - List existing folders 
+(ab del <name> - delete an address book entry
+
+(cd <id_folder>) - change current folder)               <<<[cd 2 - OUTBOX]>>>
+(pwd) - show current folder)
+(ls) - list messages from current folder (local database)
+(read <id_msg>) - read specified message)
+(download) - Download messages from remote server and persist on local database 
+(get) - List existing folders 
+(ab del <name> - delete an address book entry
+
+(tag add <messageID> <tags>) - add tag(s) to a message. EX: tag add 10 tag1, tag2
+(tag list) - show existing tags
+(tag list <tag>) - messages containing specified tag
+(search <query>) - Search emails by any field 
+
+(load) - Testando carga dinamica de command 
+(quit) - Exit this program get
