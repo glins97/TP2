@@ -10,7 +10,7 @@ def get_test_files():
 
 def clean_str(s):
     lines = s.split('\n')
-    return '\n'.join([line.replace('marcella', '').replace('glins', '') for line in lines if 'WARNING' not in line and '$' not in line])
+    return '\n'.join([line.replace('marcella', '').replace('glins', '') for line in lines if 'WARNING' not in line and '$' not in line and '@' not in line])
 
 def get_test(fn):
     def test_func():
@@ -21,13 +21,7 @@ def get_test(fn):
         output = subprocess.run(['expect', TEST_INPUTS_DIR + fn], stdout=subprocess.PIPE).stdout.decode('utf-8')
         output = clean_str(output)
         
-        res = CORRECT_OUTPUT == output
-        if res == False:
-            print(CORRECT_OUTPUT)
-            print()
-            print(output)
-            input()
-        return res
+        return CORRECT_OUTPUT == output
 
     return (fn, test_func)
 
