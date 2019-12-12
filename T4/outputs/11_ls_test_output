@@ -25,20 +25,20 @@ Total commands found: 17
 Welcome to IRIS (interpreter) mail client
 version 0.3.0.
 Type "help" for instructions.
-iris > ab list
-br.unb.cic.iris.core.SystemFacade@709d86a2
+iris > ls
+iris > cd 1
+br.unb.cic.iris.core.FolderManager@ce655b9
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/home/glins/Documents/UnB/Mat%c3%a9rias/TP2/T4/iris-console-0.3.1.jar) to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
 WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-dez 11, 2019 9:06:31 PM br.unb.cic.iris.addressbook.persistence.sqlite3.MapAddressBook ajc$after$br_unb_cic_iris_addressbook_persistence_sqlite3_MapAddressBook$1$45c88da8
+dez 11, 2019 9:55:35 PM br.unb.cic.iris.addressbook.persistence.sqlite3.MapAddressBook ajc$after$br_unb_cic_iris_addressbook_persistence_sqlite3_MapAddressBook$1$45c88da8
 SEVERE: Mapping AddressBookEntry to Hibernate CFG
-dez 11, 2019 9:06:31 PM br.unb.cic.iris.tag.persistence.sqlite3.MapTag ajc$after$br_unb_cic_iris_tag_persistence_sqlite3_MapTag$1$45c88da8
+dez 11, 2019 9:55:35 PM br.unb.cic.iris.tag.persistence.sqlite3.MapTag ajc$after$br_unb_cic_iris_tag_persistence_sqlite3_MapTag$1$45c88da8
 SEVERE: Mapping AddressBookEntry to Hibernate CFG
------------------------------------------------------
-Address Book:
------------------------------------------------------
------------------------------------------------------
+INBOX
+iris > ls
+br.unb.cic.iris.core.FolderManager@ce655b9
 iris > quit
 Bye!

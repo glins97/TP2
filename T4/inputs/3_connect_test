@@ -1,0 +1,18 @@
+spawn java -jar iris-console-0.3.1.jar
+
+expect "iris > "
+send "connect\r"
+
+expect "Provider: "
+send "gmail\r"
+
+expect "Username: "
+send "usr\r"
+
+expect "Password: "
+send "pw\r"
+
+expect "iris > "
+send "quit\r"
+
+expect
